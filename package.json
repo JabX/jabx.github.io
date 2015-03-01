@@ -1,0 +1,22 @@
+{
+  "name": "IHM-Project",
+  "version": "1.0.0",
+  "description": "For class",
+  "main": "index.html",
+  "devDependencies": {
+    "browserify": "*",
+    "gulp": "*",
+    "lodash": "*",
+    "react": "*",
+    "react-swipe": "git+https://git@github.com/JabX/react-swipe.git",
+    "reactify": "*",
+    "reflux": "*",
+    "vinyl-source-stream": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jabba lolz",
+  "license": "ISC",
+  "readme": ""
+}

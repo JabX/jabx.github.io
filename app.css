@@ -1,0 +1,252 @@
+@font-face {
+    font-family: "FiraSansBook";
+    src: url("FiraSans-Book.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+
+html, body, .app {
+    margin: 0;
+    cursor: default;
+    overflow: hidden;
+    height: 100.5%;
+    font-family: "FiraSansBook", sans-serif;
+    color: #8E2800;
+    touch-action: none;
+}
+
+button {
+    background: #8E2800;
+    border: none;
+    color: #FFF0A5;
+    font-family: "FiraSansBook", sans-serif;
+    padding-top: 10px;
+}
+
+button:active {
+    background-color: #FFB03B;
+    color: #8E2800;
+}
+
+h2, h3, h4 {
+    font-weight: 100;
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+h4 {
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.top-bar {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    background-color: #B64926;
+    box-shadow: 1px 1px 12px #000;
+    z-index: 1000;
+}
+
+.top-bar button {
+    position: absolute;
+}
+
+.button-first, .button-last {
+    width: 34px;
+    height: 34px;
+    top: 11px;
+    font-size: 12pt;
+}
+
+.button-back, .button-next {
+    top: 8px;
+    width: 40px;
+    height: 40px;
+}
+
+.button-first {
+    left: 10px;
+}
+
+.button-back {
+    left: 28%;
+    background: url('img/backArrow.svg');
+}
+
+.button-back:active {
+    background: url('img/backArrowA.svg');
+}
+
+.button-middle {
+    top: 4px;
+    left: calc(50% - 24px);
+    border-radius: 48px;
+    font-size: 18pt;
+    width: 48px;
+    height: 48px;
+}
+
+.button-next {
+    right: 28%;
+    top: 8px;
+    background: url('img/forwArrow.svg');
+}
+
+.button-next:active {
+    background: url('img/forwArrowA.svg');
+}
+
+.button-last {
+    right: 10px;
+}
+
+.main {
+    width: 100%;
+    height: calc(100% - 66px);
+    padding-top: 56px;
+}
+
+.slide-container {
+    height: 100%;
+}
+
+.slide {
+    overflow-y: auto;
+    height: 100%;
+    padding: 0 5px 0 5px;
+}
+
+img {
+    width: 100%;
+    pointer-events: none;
+}
+
+.button-to-chat {
+    background: #B64926;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    width: 86px;
+    height: 50px;
+    box-shadow: 1px 1px 6px #000;
+    padding: 6px;
+}
+
+.button-to-slide {
+    background: #B64926;
+    position: absolute;
+    left: 0;
+    bottom: 5px !important;
+    width: 86px !important;
+    height: 50px !important;
+    box-shadow: 1px 1px 6px #000;
+    padding: 6px;
+}
+
+.chat-page {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.message-container {
+    overflow-y: auto;
+    height: calc(100% - 70px);
+}
+
+.message {
+    background: #B64926;
+    padding: 10px;
+    box-shadow: 1px 1px 6px #000;
+    margin: 10px;
+    color: white;
+}
+
+.message h4 {
+    margin-left: 0;
+    color: #FFF0A5;
+}
+
+.message p {
+    margin-bottom: 0;
+}
+
+textarea {
+    position: absolute;
+    bottom: 5px;
+    right: 70px;
+    width: calc(100% - 167px);
+    height: 45px;
+    font-size: 12pt;
+    font-family: "FiraSansBook", sans-serif;
+    overflow: auto;
+    box-shadow: 1px 1px 6px #aaa;
+}
+
+.chat-page button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 60px;
+    height: 51px;
+    font-size: 12pt;
+    padding-top: 8px;
+    box-shadow: 1px 1px 6px #000;
+}
+
+.slideLeft-enter {
+    transition: transform .3s ease-out;
+    transform: translate3D(0, 100%, 0);
+}
+.slideLeft-enter.slideLeft-enter-active {
+    transform: translate3D(0, 0, 0);
+}
+
+.slideLeft-leave {
+    position: absolute !important;
+    top: 0 !important;
+    width: 100%;
+    transition: transform .3s ease-out;
+}
+.slideLeft-leave.slideLeft-leave-active {
+    transform: translate3D(0, -100%, 0);
+}
+
+.slideRight-enter {
+    transition: transform .3s ease-out;
+    transform: translate3D(0, -100%, 0);
+}
+.slideRight-enter.slideRight-enter-active {
+    transform: translate3D(0, 0, 0);
+}
+
+.slideRight-leave {
+    position: absolute !important;
+    top: 0 !important;
+    width: 100%;
+    transition: transform .3s ease-out;
+}
+.slideRight-leave.slideRight-leave-active {
+    transform: translate3D(0, 100%, 0);
+}
+
+.messageAppear-enter {
+    transition: transform .3s ease-out,
+    opacity .3s ease-out;
+    transform: translate3D(0, 20px, 0);
+    opacity: 0;
+}
+.messageAppear-enter.messageAppear-enter-active {
+    transform: translate3D(0, 0, 0);
+    opacity: 1;
+}
