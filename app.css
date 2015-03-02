@@ -207,6 +207,7 @@ textarea {
 .slideLeft-enter {
     transition: transform .3s ease-out;
     transform: translate3D(0, 100%, 0);
+    overflow: hidden !important;
 }
 .slideLeft-enter.slideLeft-enter-active {
     transform: translate3D(0, 0, 0);
@@ -217,6 +218,7 @@ textarea {
     top: 0 !important;
     width: 100%;
     transition: transform .3s ease-out;
+    overflow: hidden !important;
 }
 .slideLeft-leave.slideLeft-leave-active {
     transform: translate3D(0, -100%, 0);
@@ -225,6 +227,7 @@ textarea {
 .slideRight-enter {
     transition: transform .3s ease-out;
     transform: translate3D(0, -100%, 0);
+    overflow: hidden !important;
 }
 .slideRight-enter.slideRight-enter-active {
     transform: translate3D(0, 0, 0);
@@ -235,6 +238,7 @@ textarea {
     top: 0 !important;
     width: 100%;
     transition: transform .3s ease-out;
+    overflow: hidden !important;
 }
 .slideRight-leave.slideRight-leave-active {
     transform: translate3D(0, 100%, 0);

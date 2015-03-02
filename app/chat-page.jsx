@@ -60,7 +60,7 @@ module.exports = React.createClass({
                 return <Message key={i} message={slide.messages[i]} />;
             });
         else
-            messages = <div style={{margin: "20px"}}>No messages yet on this slide</div>
+            messages = <div className="chat-page" style={{padding: '20px'}}>No messages yet on this slide</div>
 
         return (
             <div className="chat-page" style={this.props.style}>
