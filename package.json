@@ -10,6 +10,7 @@
     "react": "*",
     "react-swipe": "git+https://git@github.com/JabX/react-swipe.git",
     "reactify": "*",
+    "reactfire": "*",
     "reflux": "*",
     "vinyl-source-stream": "*"
   },

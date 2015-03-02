@@ -18,7 +18,7 @@ module.exports = React.createClass({
     },
 
     render: function() {
-        var currentSlide = this.props.currentSlide - 1;
+        var currentSlide = this.props.currentSlide;
         var slides = this.props.slides;
         var slide = slides[currentSlide];
 

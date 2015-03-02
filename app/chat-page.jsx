@@ -1,14 +1,14 @@
 var React = require('react/addons');
 var TransitionGroup = React.addons.CSSTransitionGroup;
 
-var Slides = require('./slides');
+var Firebase = require('firebase');
 
 var Message = React.createClass({
     mixins:[React.addons.PureRenderMixin],
 
     render: function() {
         var sender = this.props.message.sender;
-        var date = this.props.message.time.toLocaleString('en-US');
+        var date = new Date(this.props.message.time).toLocaleString('en-US');
         var content = this.props.message.content;
         return (
             <div className="message">
@@ -39,19 +39,25 @@ module.exports = React.createClass({
     },
 
     sendMessage: function() {
-        Slides.Actions.PostMessage(this.props.currentSlide - 1, this.state.newMessage);
+        var message = this.state.newMessage;
+        if(message != "") {
+            var sender = "Me";
+            var time = Date.now();
+            var fbRef = new Firebase("https://brilliant-heat-7623.firebaseio.com/slides/" + this.props.currentSlide + "/messages")
+            fbRef.push({sender: sender, time: time, content: message});
+        }
         this.setState({newMessage: ""});
     },
 
     render: function() {
-        var currentSlide = this.props.currentSlide - 1;
+        var currentSlide = this.props.currentSlide;
         var slides = this.props.slides;
         var slide = slides[currentSlide];
 
         var messages;
-        if (slide.messages.length > 0)
-            messages = slide.messages.map(function(message, i) {
-                return <Message key={i} message={message} />;
+        if (slide.messages)
+            messages = Object.keys(slide.messages).map(function(i) {
+                return <Message key={i} message={slide.messages[i]} />;
             });
         else
             messages = <div style={{margin: "20px"}}>No messages yet on this slide</div>
