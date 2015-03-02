@@ -8,7 +8,7 @@ var Message = React.createClass({
 
     render: function() {
         var sender = this.props.message.sender;
-        var date = new Date(this.props.message.time).toLocaleString('en-US');
+        var date = Intl.DateTimeFormat("en-US", {hour: "numeric", minute: "numeric"}).format(new Date(this.props.message.time));
         var content = this.props.message.content;
         return (
             <div className="message">
@@ -41,7 +41,7 @@ module.exports = React.createClass({
     sendMessage: function() {
         var message = this.state.newMessage;
         if(message != "") {
-            var sender = "Me";
+            var sender = this.props.user;
             var time = Date.now();
             var fbRef = new Firebase("https://brilliant-heat-7623.firebaseio.com/slides/" + this.props.currentSlide + "/messages")
             fbRef.push({sender: sender, time: time, content: message});

@@ -5,6 +5,7 @@
   "main": "index.html",
   "devDependencies": {
     "browserify": "*",
+    "firebase": "*",
     "gulp": "*",
     "lodash": "*",
     "react": "*",
